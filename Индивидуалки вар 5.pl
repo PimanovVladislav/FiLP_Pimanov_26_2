@@ -22,4 +22,50 @@ rl(B,A,I,N):-I1 is I+1,read(X), append(B,[X],B1), rl(B1,A,I1,N).
 write_list([X]):-write(X),!.
 write_list([X|Y]):-write(X),write_list(Y).
 
-id3:-
+in_list([El|_],El).
+in_list([_|T],El):-in_list(T,El).
+
+
+id4:- List=[[vitya,_],[kolya,_],[jura,_],[dima,_],[andrew,_]],
+((
+    (   in_list(List,[vitya, yes]); in_list(List,[kolya, yes])),
+    (   in_list(List,[vitya, no]), in_list(List,[jura, no])),
+    (   in_list(List,[vitya, yes]);(in_list(List,[jura, no]),
+        in_list(List,[vitya, no]), in_list(List,[kolya, no]))),
+    (    (in_list(List,[vitya, yes]); in_list(List,[vitya, yes])),
+         (   in_list(List,[vitya, no]); in_list(List,[jura, no]));
+         (in_list(List,[vitya, no]); in_list(List,[vitya,no])),
+         (   in_list(List,[vitya, yes]); in_list(List,[jura,es])) )               );
+(
+    (   in_list(List,[vitya,no]); in_list(List,[kolya, no])),
+    (   in_list(List,[vitya, no]); in_list(List,[jura, no])),
+    (   in_list(List,[vitya, yes]);(in_list(List,[jura, no]),
+        in_list(List,[vitya, no]), in_list(List,[kolya, no]))),
+    (    (in_list(List,[vitya, yes]); in_list(List,[vitya, yes])),
+         (   in_list(List,[vitya, no]); in_list(List,[jura, no]));
+         (in_list(List,[vitya, no]); in_list(List,[vitya,no])),
+         (   in_list(List,[vitya, yes]); in_list(List,[jura,es])) )               );
+(
+    (   in_list(List,[vitya, yes]); in_list(List,[kolya, yes])),
+    (   in_list(List,[vitya, yes]); in_list(List,[jura, yes])),
+    (   in_list(List,[vitya, yes]);(in_list(List,[jura, no]),
+        in_list(List,[vitya, no]), in_list(List,[kolya, no]))),
+    (    (in_list(List,[vitya, yes]); in_list(List,[vitya, yes])),
+         (   in_list(List,[vitya, no]); in_list(List,[jura, no]));
+         (in_list(List,[vitya, no]); in_list(List,[vitya,no])),
+         (   in_list(List,[vitya, yes]); in_list(List,[jura,es])) )               );
+(
+    (   in_list(List,[vitya, yes]); in_list(List,[kolya, yes])),
+    (   in_list(List,[vitya, no]); in_list(List,[jura, no])),
+    (   in_list(List,[vitya, yes]);(in_list(List,[jura, no]),
+        in_list(List,[vitya, no]), in_list(List,[kolya, no])))
+);
+(
+    (   in_list(List,[vitya, yes]); in_list(List,[kolya, yes])),
+    (   in_list(List,[vitya, no]); in_list(List,[jura, no])),
+    (   (in_list(List,[vitya, yes]); in_list(List,[vitya, yes])),
+        (   in_list(List,[vitya, no]); in_list(List,[jura, no]));
+        (in_list(List,[vitya, no]); in_list(List,[vitya,no])),
+        (   in_list(List,[vitya, yes]); in_list(List,[jura,es])) )                )),
+in_list(List,[Who,yes]), write_list(List),nl.
+
