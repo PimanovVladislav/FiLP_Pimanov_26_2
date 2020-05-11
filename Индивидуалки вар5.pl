@@ -123,3 +123,11 @@ id4:- List=[_],
 
  write_list(List),nl.
 
+
+id5:- read(N),alphabet=[a,b,c,d,e,f],tell('combinatoins.txt'),comb(alphabet,list,[], N-14),told.
+
+b_a_r([],Perm1):-write_str(Perm1),nl,!,fail.
+b_a_r(A,Perm):-in_list_exlude(A,El,A1), b_a_r(A1,[El|Perm]).
+
+built_all_razm:-
+    read_str(A,_), b_a_r(A,[]).
