@@ -17,7 +17,6 @@ get_graph_edges(V,E):-get_V(V),write(V),nl,write("Edges"),get_edges(V,E),write(E
 	get_edges(V,E,E,M,M):-!.
 	get_edges(V,E,Edges,M,Count):-get_edge(V,Edge),append(Edges,[Edge],E1),
 								Count1 is Count+1,get_edges(V,E,E1,M,Count1).
-
 in_list1([El|_],El):-!.
 in_list1([_|T],El):-in_list1(T,El).
 
@@ -33,6 +32,31 @@ check_vertex([_|T],V1):-check_vertex(T,V1).
 get_edge(V,[V1,V2]):-write("Edge"),nl,read_str(X),name(V1,X),check_vertex(V,V1),
 						read_str(Y),name(V2,Y),check_vertex(V,V2).
 
+
+
+id6:-write("Задача нахождения наименьшего реберного покрытия в графе."),nl, write("Введите граф"), nl, get_graph_edges(V,E),list_len(V,Len), L is Len div 2,naimrebpokr(V,E,L,Len).
+
+naimrebpokr(_,_,Len,Len):-!.
+naimrebpokr(V,E,L,Len):-L1 is L+1, nrp(V,E,L),naimrebpokr(V,E,L1,Len).
+
+nrp(V,E,Kol):- sochet(B,Kol,E), all_vertexes(B,[],V1), (equals(V,V1)-> write(B),nl; fail).
+
+all_vertexes([], V,V):-!.
+all_vertexes([[H1,H2]|T],V,Vert):-append1(V,[H1],V1),append1(V1,[H2],V2),all_vertexes(T,V2,Vert).
+
+equals([],_):-!.
+equals([H|T],V):-in_list(V,H),equals(T,V).
+
+list_len([],0):-!.
+list_len([_|T],L):-list_len(T,L1),L is L1+1.
+
+sochet([],0,_):-!.
+sochet([H|Sub_set],K,[H|Set]):-K1 is K-1,sochet(Sub_set,K1,Set).
+sochet(Sub_set,K,[_|Set]):-sochet(Sub_set,K,Set).
+
+sub_set([],[]).
+sub_set([H|Sub_set],[H|Set]):-sub_set(Sub_set,Set).
+sub_set(Sub_set,[_|Set]):-sub_set(Sub_set,Set).
 
 gamilton:-get_graph_edges(V,E),gamilton(V,E).
 
