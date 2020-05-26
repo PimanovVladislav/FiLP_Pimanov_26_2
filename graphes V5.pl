@@ -34,12 +34,13 @@ get_edge(V,[V1,V2]):-write("Edge"),nl,read_str(X),name(V1,X),check_vertex(V,V1),
 
 
 
-id6:-write("Задача нахождения наименьшего реберного покрытия в графе."),nl, write("Введите граф"), nl, get_graph_edges(V,E),list_len(V,Len), L is Len div 2,naimrebpokr(V,E,L,Len).
+id6:-write("Задача нахождения наименьшего реберного покрытия в графе."),nl, write("Введите граф"), nl, get_graph_edges(V,E),nl,write("Наименьшее реберное покрытие: "),nl, list_len(V,Len),L is Len div 2, K is Len mod 2,
+	(K = 0 -> naimrebpokr(V,E,L,Len); naimrebpokr(V,E,L+1,Len)).
 
 naimrebpokr(_,_,Len,Len):-!.
-naimrebpokr(V,E,L,Len):-L1 is L+1, nrp(V,E,L),naimrebpokr(V,E,L1,Len).
+naimrebpokr(V,E,L,Len):-L1 is L+1, (nrp(V,E,L)->true;naimrebpokr(V,E,L1,Len)).
 
-nrp(V,E,Kol):- sochet(B,Kol,E), all_vertexes(B,[],V1), (equals(V,V1)-> write(B),nl; fail).
+nrp(V,E,Kol):- sochet(B,Kol,E), all_vertexes(B,[],V1), (equals(V,V1)-> write(B),nl,true; fail).
 
 all_vertexes([], V,V):-!.
 all_vertexes([[H1,H2]|T],V,Vert):-append1(V,[H1],V1),append1(V1,[H2],V2),all_vertexes(T,V2,Vert).
@@ -139,3 +140,5 @@ short_way(V,E,I,S,Way,Len):-short_way(V,E,I,S,Way,_,Len).
 short_way(V,E,I,S,Way,_,Len):-
 	make_way(V,E,I,S,Cur_Way1),list_len(Cur_Way1,L),L<Len,!,short_way(V,E,I,S,Way,Cur_Way1,L).
 short_way(_,_,_,_,Way,Way,_).
+
+
