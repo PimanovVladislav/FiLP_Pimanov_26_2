@@ -144,7 +144,7 @@ built_all_razm_p:-
 in_list([El|_],El).
 in_list([_|T],El):-in_list(T,El).
 b_a_rp(_,0,Perm1):-write_str(Perm1),nl,!,fail.
-b_a_rp(A,N,Perm):- in_list(A,El),N1 is N-1, b_a_p(A,N1,[El|Perm]).
+b_a_rp(A,N,Perm):- in_list(A,El),N1 is N-1, b_a_rp(A,N1,[El|Perm]).
 
 in_list_exlude([El|T],El,T).
 in_list_exlude([H|T],El,[H|T]):- in_list_exlude(T,El,T).
@@ -156,10 +156,13 @@ built_all_razm:-
     read_str(A,_), b_a_r(A,[]).
 % _________________________________________________________________________
 
+all_perestanovki(A):-perestanovka(A,P),(not(words(P))->asserta(words(P)),write_str(P),nl,fail).
 
+perestanovka([],[]).
+perestanovka(List,[H|Perm]):-delete1(H,List,Rest),perestanovka(Rest,Perm).
 
-
-
+delete1(X,[X|T],T).
+delete1(X,[H|T],[H|NT]):-delete1(X,T,NT).
 
 
 
