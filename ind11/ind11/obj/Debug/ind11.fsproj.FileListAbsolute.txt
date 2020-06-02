@@ -1,0 +1,10 @@
+c:\users\user\source\repos\ind11\ind11\bin\Debug\ind11.exe.config
+c:\users\user\source\repos\ind11\ind11\bin\Debug\ind11.XML
+c:\users\user\source\repos\ind11\ind11\bin\Debug\ind11.exe
+c:\users\user\source\repos\ind11\ind11\bin\Debug\ind11.pdb
+c:\users\user\source\repos\ind11\ind11\bin\Debug\FSharp.Core.dll
+c:\users\user\source\repos\ind11\ind11\bin\Debug\System.ValueTuple.dll
+c:\users\user\source\repos\ind11\ind11\bin\Debug\FSharp.Core.xml
+c:\users\user\source\repos\ind11\ind11\bin\Debug\ru\FSharp.Core.resources.dll
+c:\users\user\source\repos\ind11\ind11\obj\Debug\ind11.exe
+c:\users\user\source\repos\ind11\ind11\obj\Debug\ind11.pdb
