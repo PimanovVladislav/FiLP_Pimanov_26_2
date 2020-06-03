@@ -8,3 +8,13 @@ c:\users\user\source\repos\ind11\ind11\bin\Debug\FSharp.Core.xml
 c:\users\user\source\repos\ind11\ind11\bin\Debug\ru\FSharp.Core.resources.dll
 c:\users\user\source\repos\ind11\ind11\obj\Debug\ind11.exe
 c:\users\user\source\repos\ind11\ind11\obj\Debug\ind11.pdb
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\ind11.exe.config
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\ind11.XML
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\ind11.exe
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\ind11.pdb
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\FSharp.Core.dll
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\System.ValueTuple.dll
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\bin\Debug\FSharp.Core.xml
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\obj\Debug\ind11.fsproj.CopyComplete
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\obj\Debug\ind11.exe
+C:\Users\Владислав\Documents\Zhuck\FiLP_Pimanov_26_2\ind11\ind11\obj\Debug\ind11.pdb
